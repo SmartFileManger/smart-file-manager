@@ -1,6 +1,7 @@
+```html
 <!doctype html>
-
 <html lang="en">
+
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -8,6 +9,7 @@
 <title>Smart File Manager — Organize, Rename & Clean Your Files</title>
 
 <style>
+
 :root{
     --bg:#090b10;
     --card:#11151e;
@@ -21,9 +23,13 @@
     --danger:#ff718b;
 }
 
-*{box-sizing:border-box}
+*{
+    box-sizing:border-box;
+}
 
-html{scroll-behavior:smooth}
+html{
+    scroll-behavior:smooth;
+}
 
 body{
     margin:0;
@@ -47,22 +53,24 @@ body.light{
     margin:auto;
 }
 
-/* NAVIGATION */
+/* =========================================================
+   NAVIGATION
+========================================================= */
 
 nav{
-    height:74px;
+    height:78px;
     border-bottom:1px solid var(--line);
     display:flex;
     align-items:center;
     position:sticky;
     top:0;
     z-index:10;
-    background:rgba(9,11,16,.82);
+    background:rgba(9,11,16,.88);
     backdrop-filter:blur(14px);
 }
 
 body.light nav{
-    background:rgba(247,248,252,.85);
+    background:rgba(247,248,252,.90);
 }
 
 .nav{
@@ -73,30 +81,33 @@ body.light nav{
 }
 
 .logo{
-    font-size:21px;
+    font-size:22px;
     font-weight:800;
     display:flex;
     align-items:center;
     gap:10px;
     text-decoration:none;
     color:var(--text);
+    white-space:nowrap;
 }
 
 .mark{
-    width:36px;
-    height:36px;
+    width:38px;
+    height:38px;
     border-radius:11px;
     background:linear-gradient(135deg,var(--p),var(--p2));
     display:grid;
     place-items:center;
     color:white;
+    font-weight:800;
 }
 
 .links{
     display:flex;
-    gap:26px;
+    gap:25px;
     color:var(--muted);
     font-size:14px;
+    font-weight:600;
 }
 
 .links a,
@@ -144,57 +155,61 @@ body.light nav{
     padding:9px;
 }
 
-/* HERO */
+/* =========================================================
+   HERO / MAIN INDEX
+========================================================= */
 
 .hero{
     display:grid;
     grid-template-columns:1.05fr .95fr;
     gap:55px;
     align-items:center;
-    padding:90px 0 75px;
+    padding:95px 0 80px;
 }
 
 .badge,
 .eyebrow{
     color:#8d99ff;
-    font-size:12px;
+    font-size:13px;
     font-weight:800;
-    letter-spacing:1.4px;
+    letter-spacing:1.5px;
 }
 
 .badge{
     display:inline-block;
     border:1px solid var(--line);
-    padding:7px 12px;
+    padding:8px 13px;
     border-radius:99px;
     background:var(--card);
-    margin-bottom:18px;
+    margin-bottom:20px;
 }
 
 h1{
-    font-size:clamp(44px,6vw,72px);
-    line-height:1.03;
-    letter-spacing:-3px;
-    margin:0 0 22px;
+    font-size:clamp(52px,7vw,82px);
+    line-height:1.02;
+    letter-spacing:-3.8px;
+    margin:0 0 24px;
+    font-weight:850;
 }
 
 .gradient{
     background:linear-gradient(100deg,#8792ff,#ad78ff);
     color:transparent;
     background-clip:text;
+    -webkit-background-clip:text;
 }
 
 .hero p{
-    font-size:18px;
+    font-size:19px;
     color:var(--muted);
-    max-width:610px;
+    max-width:620px;
 }
 
 .buttons{
     display:flex;
     gap:12px;
     flex-wrap:wrap;
-    margin-top:28px;
+    margin-top:30px;
 }
 
 .trust{
@@ -203,10 +218,13 @@ h1{
     flex-wrap:wrap;
     color:var(--muted);
     font-size:13px;
-    margin-top:23px;
+    margin-top:25px;
 }
 
-/* APP PREVIEW */
+/* =========================================================
+   APP PREVIEW
+   STRAIGHT / ALIGNED
+========================================================= */
 
 .window{
     background:var(--card);
@@ -214,7 +232,11 @@ h1{
     border-radius:20px;
     overflow:hidden;
     box-shadow:0 30px 80px #0006;
-    transform:rotate(1deg);
+
+    /* Removed rotate(1deg) */
+    transform:none;
+
+    width:100%;
 }
 
 .top{
@@ -335,32 +357,38 @@ h1{
     color:var(--muted);
 }
 
-/* SECTIONS */
+/* =========================================================
+   SECTIONS
+========================================================= */
 
 section{
-    padding:82px 0;
+    padding:90px 0;
 }
 
 .head{
     text-align:center;
-    max-width:700px;
-    margin:0 auto 42px;
+    max-width:760px;
+    margin:0 auto 48px;
 }
 
 .head h2,
 .cta h2{
-    font-size:42px;
-    line-height:1.1;
-    letter-spacing:-1.5px;
-    margin:9px 0 13px;
+    font-size:clamp(36px,4.2vw,50px);
+    line-height:1.08;
+    letter-spacing:-1.8px;
+    margin:11px 0 16px;
+    font-weight:800;
 }
 
 .head p,
 .cta p{
     color:var(--muted);
+    font-size:16px;
 }
 
-/* MAIN TOOLS */
+/* =========================================================
+   MAIN TOOLS
+========================================================= */
 
 .tools{
     display:grid;
@@ -405,7 +433,7 @@ section{
 }
 
 .tool-card h3{
-    font-size:23px;
+    font-size:24px;
     margin:0 0 10px;
 }
 
@@ -439,7 +467,9 @@ section{
     text-decoration:none;
 }
 
-/* WORKFLOW */
+/* =========================================================
+   WORKFLOW
+========================================================= */
 
 .workflow{
     display:grid;
@@ -468,6 +498,7 @@ section{
 
 .card h3{
     margin:0 0 7px;
+    font-size:20px;
 }
 
 .card p{
@@ -476,7 +507,9 @@ section{
     font-size:14px;
 }
 
-/* TOOL DETAIL */
+/* =========================================================
+   TOOL DETAIL
+========================================================= */
 
 .detail-grid{
     display:grid;
@@ -500,7 +533,7 @@ section{
 }
 
 .detail h3{
-    font-size:25px;
+    font-size:26px;
     margin:8px 0;
 }
 
@@ -539,7 +572,9 @@ section{
     color:var(--danger);
 }
 
-/* FEATURES */
+/* =========================================================
+   FEATURES
+========================================================= */
 
 .grid3{
     display:grid;
@@ -552,7 +587,9 @@ section{
     margin-bottom:10px;
 }
 
-/* CATEGORIES */
+/* =========================================================
+   CATEGORIES
+========================================================= */
 
 .cats{
     display:grid;
@@ -573,7 +610,9 @@ section{
     margin-bottom:4px;
 }
 
-/* PRICING */
+/* =========================================================
+   PRICING
+========================================================= */
 
 .pricing .card{
     padding:28px;
@@ -604,7 +643,9 @@ section{
     box-shadow:0 18px 50px #7180ff18;
 }
 
-/* FAQ */
+/* =========================================================
+   FAQ
+========================================================= */
 
 .faq{
     max-width:800px;
@@ -637,7 +678,9 @@ section{
     display:block;
 }
 
-/* CTA */
+/* =========================================================
+   CTA
+========================================================= */
 
 .cta{
     border:1px solid var(--line);
@@ -652,7 +695,65 @@ section{
     margin:10px auto 25px;
 }
 
-/* FOOTER */
+/* =========================================================
+   CONTACT FORUM
+========================================================= */
+
+.contact-forum{
+    padding:95px 0 100px;
+}
+
+.forum-box{
+    max-width:850px;
+    margin:auto;
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:24px;
+    padding:55px 45px;
+    text-align:center;
+    box-shadow:0 25px 70px #0003;
+}
+
+.forum-box h2{
+    font-size:clamp(36px,4vw,48px);
+    line-height:1.1;
+    margin:10px 0 15px;
+    letter-spacing:-1.5px;
+}
+
+.forum-box p{
+    max-width:650px;
+    margin:0 auto 28px;
+    color:var(--muted);
+    font-size:16px;
+}
+
+.forum-actions{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.forum-button{
+    display:inline-block;
+    padding:13px 24px;
+    border-radius:12px;
+    text-decoration:none;
+    font-weight:700;
+    color:white;
+    background:linear-gradient(135deg,var(--p),var(--p2));
+    box-shadow:0 12px 30px #7180ff33;
+    transition:.2s;
+}
+
+.forum-button:hover{
+    transform:translateY(-2px);
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
 
 footer{
     border-top:1px solid var(--line);
@@ -671,7 +772,33 @@ footer{
     gap:20px;
 }
 
-/* RESPONSIVE */
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1000px){
+
+    .links{
+        gap:14px;
+        font-size:13px;
+    }
+
+    .hero{
+        grid-template-columns:1fr;
+        padding-top:65px;
+    }
+
+    .tools,
+    .workflow,
+    .grid3,
+    .detail-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .cats{
+        grid-template-columns:repeat(3,1fr);
+    }
+}
 
 @media(max-width:850px){
 
@@ -694,12 +821,43 @@ footer{
     .cats{
         grid-template-columns:repeat(3,1fr);
     }
+
 }
 
 @media(max-width:560px){
 
+    nav{
+        height:70px;
+    }
+
+    .logo{
+        font-size:18px;
+    }
+
+    .mark{
+        width:34px;
+        height:34px;
+    }
+
+    .actions .primary{
+        display:none;
+    }
+
     section{
-        padding:60px 0;
+        padding:65px 0;
+    }
+
+    .hero{
+        padding:55px 0 60px;
+    }
+
+    h1{
+        font-size:clamp(43px,12vw,58px);
+        letter-spacing:-2.5px;
+    }
+
+    .hero p{
+        font-size:16px;
     }
 
     .tools,
@@ -713,17 +871,21 @@ footer{
         grid-template-columns:repeat(2,1fr);
     }
 
-    h1{
-        letter-spacing:-2px;
-    }
-
     .head h2,
     .cta h2{
-        font-size:33px;
+        font-size:34px;
     }
 
     .cta{
         padding:40px 20px;
+    }
+
+    .forum-box{
+        padding:40px 22px;
+    }
+
+    .forum-box h2{
+        font-size:34px;
     }
 
     .app{
@@ -738,86 +900,105 @@ footer{
         flex-direction:column;
         gap:15px;
     }
+
 }
+
 </style>
 
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
 
 <nav>
+
 <div class="wrap nav">
 
 <a class="logo" href="#">
-<span class="mark">F</span>
-Smart File Manager
+    <span class="mark">F</span>
+    Smart File Manager
 </a>
 
 <div class="links">
-<a href="#tools">Tools</a>
-<a href="#how">How It Works</a>
-<a href="#features">Features</a>
-<a href="#pricing">Pricing</a>
-<a href="#faq">FAQ</a>
+    <a href="#tools">Tools</a>
+    <a href="#how">How It Works</a>
+    <a href="#features">Features</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact-forum">Contact</a>
 </div>
 
 <div class="actions">
+
 <button class="btn theme" onclick="theme()">☾</button>
-<a class="btn primary" href="#download">Download</a>
+
+<a class="btn primary" href="#download">
+    Download
+</a>
+
 </div>
 
 </div>
+
 </nav>
 
-<!-- HERO -->
+
+<!-- =========================================================
+     HERO
+========================================================= -->
 
 <section class="hero wrap">
 
 <div>
 
-<div class="badge">3 POWERFUL FILE MANAGEMENT TOOLS</div>
+<div class="badge">
+    3 POWERFUL FILE MANAGEMENT TOOLS
+</div>
 
 <h1>
-Clean, rename & organize your
-<span class="gradient">digital world.</span>
+    Clean, rename & organize your
+    <span class="gradient">digital world.</span>
 </h1>
 
 <p>
-Smart File Manager gives you three powerful tools to take control of your files:
-<strong>Bulk Rename</strong>, <strong>Duplicate Finder</strong>, and
-<strong>Smart Organize</strong>.
+    Smart File Manager gives you three powerful tools to take control
+    of your files: <strong>Bulk Rename</strong>,
+    <strong>Duplicate Finder</strong>, and
+    <strong>Smart Organize</strong>.
 </p>
 
 <div class="buttons">
 
 <a class="btn primary" href="#tools">
-Explore the Tools →
+    Explore the Tools →
 </a>
 
 <a class="btn" href="#download">
-Download Smart File Manager
+    Download Smart File Manager
 </a>
 
 </div>
 
 <div class="trust">
-<span>✓ Bulk rename hundreds of files</span>
-<span>✓ Find duplicate files</span>
-<span>✓ Automatically organize folders</span>
+    <span>✓ Bulk rename hundreds of files</span>
+    <span>✓ Find duplicate files</span>
+    <span>✓ Automatically organize folders</span>
 </div>
 
 </div>
+
 
 <!-- APP PREVIEW -->
 
 <div class="window">
 
 <div class="top">
-<i class="dot"></i>
-<i class="dot"></i>
-<i class="dot"></i>
+    <i class="dot"></i>
+    <i class="dot"></i>
+    <i class="dot"></i>
 </div>
 
 <div class="app">
@@ -839,7 +1020,7 @@ Download Smart File Manager
 <b>Smart File Manager Dashboard</b>
 
 <span class="tool-status">
-READY
+    READY
 </span>
 
 </div>
@@ -847,18 +1028,18 @@ READY
 <div class="stats">
 
 <div class="stat">
-<small>FILES</small>
-<b>12,480</b>
+    <small>FILES</small>
+    <b>12,480</b>
 </div>
 
 <div class="stat">
-<small>SPACE</small>
-<b>84.6 GB</b>
+    <small>SPACE</small>
+    <b>84.6 GB</b>
 </div>
 
 <div class="stat">
-<small>DUPLICATES</small>
-<b>326</b>
+    <small>DUPLICATES</small>
+    <b>326</b>
 </div>
 
 </div>
@@ -868,39 +1049,50 @@ READY
 <div class="tool-row">
 
 <div class="tool-left">
+
 <div class="tool-icon">✏️</div>
+
 <div>
-<b>Bulk Rename</b><br>
-<small>248 files selected</small>
+    <b>Bulk Rename</b><br>
+    <small>248 files selected</small>
 </div>
+
 </div>
 
 <span>Ready</span>
 
 </div>
 
+
 <div class="tool-row">
 
 <div class="tool-left">
+
 <div class="tool-icon">🔍</div>
+
 <div>
-<b>Duplicate Finder</b><br>
-<small>326 potential duplicates</small>
+    <b>Duplicate Finder</b><br>
+    <small>326 potential duplicates</small>
 </div>
+
 </div>
 
 <span>Scan</span>
 
 </div>
 
+
 <div class="tool-row">
 
 <div class="tool-left">
+
 <div class="tool-icon">📂</div>
+
 <div>
-<b>Smart Organize</b><br>
-<small>6 categories detected</small>
+    <b>Smart Organize</b><br>
+    <small>6 categories detected</small>
 </div>
+
 </div>
 
 <span>Ready</span>
@@ -917,25 +1109,32 @@ READY
 
 </section>
 
-<!-- THREE MAIN TOOLS -->
+
+<!-- =========================================================
+     THREE MAIN TOOLS
+========================================================= -->
 
 <section id="tools">
 
 <div class="head">
 
-<div class="eyebrow">THE CORE OF Smart File Manager</div>
+<div class="eyebrow">
+    THE CORE OF SMART FILE MANAGER
+</div>
 
-<h2>Three tools. Complete file control.</h2>
+<h2>
+    Three tools. Complete file control.
+</h2>
 
 <p>
-Everything you need to clean up, rename and organize your files from one simple application.
+    Everything you need to clean up, rename and organize your files
+    from one simple application.
 </p>
 
 </div>
 
 <div class="wrap tools">
 
-<!-- BULK RENAME -->
 
 <div class="tool-card">
 
@@ -946,7 +1145,8 @@ Everything you need to clean up, rename and organize your files from one simple 
 <h3>Bulk Rename</h3>
 
 <p>
-Rename hundreds or thousands of files in seconds instead of changing each filename manually.
+    Rename hundreds or thousands of files in seconds instead of
+    changing each filename manually.
 </p>
 
 <ul>
@@ -958,12 +1158,11 @@ Rename hundreds or thousands of files in seconds instead of changing each filena
 </ul>
 
 <a class="tool-link" href="#bulk-rename">
-Explore Bulk Rename →
+    Explore Bulk Rename →
 </a>
 
 </div>
 
-<!-- DUPLICATES -->
 
 <div class="tool-card">
 
@@ -974,7 +1173,8 @@ Explore Bulk Rename →
 <h3>Duplicate Finder</h3>
 
 <p>
-Find duplicate files and reclaim wasted storage without manually comparing files.
+    Find duplicate files and reclaim wasted storage without manually
+    comparing files.
 </p>
 
 <ul>
@@ -986,12 +1186,11 @@ Find duplicate files and reclaim wasted storage without manually comparing files
 </ul>
 
 <a class="tool-link" href="#duplicates">
-Explore Duplicate Finder →
+    Explore Duplicate Finder →
 </a>
 
 </div>
 
-<!-- ORGANIZE -->
 
 <div class="tool-card">
 
@@ -1002,7 +1201,8 @@ Explore Duplicate Finder →
 <h3>Smart Organize</h3>
 
 <p>
-Turn messy folders into a structured file system by automatically categorizing your files.
+    Turn messy folders into a structured file system by automatically
+    categorizing your files.
 </p>
 
 <ul>
@@ -1014,7 +1214,7 @@ Turn messy folders into a structured file system by automatically categorizing y
 </ul>
 
 <a class="tool-link" href="#organize">
-Explore Smart Organize →
+    Explore Smart Organize →
 </a>
 
 </div>
@@ -1023,18 +1223,26 @@ Explore Smart Organize →
 
 </section>
 
-<!-- HOW IT WORKS -->
+
+<!-- =========================================================
+     HOW IT WORKS
+========================================================= -->
 
 <section id="how">
 
 <div class="head">
 
-<div class="eyebrow">SIMPLE WORKFLOW</div>
+<div class="eyebrow">
+    SIMPLE WORKFLOW
+</div>
 
-<h2>Choose a tool and get the job done.</h2>
+<h2>
+    Choose a tool and get the job done.
+</h2>
 
 <p>
-Smart File Manager keeps every operation simple, transparent and under your control.
+    Smart File Manager keeps every operation simple,
+    transparent and under your control.
 </p>
 
 </div>
@@ -1042,69 +1250,61 @@ Smart File Manager keeps every operation simple, transparent and under your cont
 <div class="wrap workflow">
 
 <div class="card">
-
 <div class="num">01</div>
-
 <h3>Select your files</h3>
-
 <p>
-Choose a folder, files or data location you want to work with.
+    Choose a folder, files or data location you want to work with.
 </p>
-
 </div>
 
 <div class="card">
-
 <div class="num">02</div>
-
 <h3>Choose a tool</h3>
-
 <p>
-Rename files, find duplicates or organize your folders.
+    Rename files, find duplicates or organize your folders.
 </p>
-
 </div>
 
 <div class="card">
-
 <div class="num">03</div>
-
 <h3>Review changes</h3>
-
 <p>
-Preview proposed changes before modifying your files.
+    Preview proposed changes before modifying your files.
 </p>
-
 </div>
 
 <div class="card">
-
 <div class="num">04</div>
-
 <h3>Apply</h3>
-
 <p>
-Run the operation and monitor progress from the Smart File Manager interface.
+    Run the operation and monitor progress from the Smart File Manager interface.
 </p>
-
 </div>
 
 </div>
 
 </section>
 
-<!-- BULK RENAME DETAIL -->
+
+<!-- =========================================================
+     BULK RENAME DETAIL
+========================================================= -->
 
 <section id="bulk-rename">
 
 <div class="head">
 
-<div class="eyebrow">TOOL 01</div>
+<div class="eyebrow">
+    TOOL 01
+</div>
 
-<h2>Rename hundreds of files at once.</h2>
+<h2>
+    Rename hundreds of files at once.
+</h2>
 
 <p>
-Stop manually renaming files one by one. Build a naming pattern and apply it to an entire folder.
+    Stop manually renaming files one by one. Build a naming pattern
+    and apply it to an entire folder.
 </p>
 
 </div>
@@ -1113,73 +1313,84 @@ Stop manually renaming files one by one. Build a naming pattern and apply it to 
 
 <div class="detail">
 
-<div class="detail-label">BULK RENAME</div>
+<div class="detail-label">
+    BULK RENAME
+</div>
 
-<h3>Powerful filename controls</h3>
+<h3>
+    Powerful filename controls
+</h3>
 
 <p>
-Create consistent filenames using find and replace, prefixes, suffixes and automatic numbering.
+    Create consistent filenames using find and replace,
+    prefixes, suffixes and automatic numbering.
 </p>
 
 <div class="mock">
 
 <div class="mock-head">
-Rename Preview
+    Rename Preview
 </div>
 
 <div class="mock-row">
-<span>Office Document.pdf</span>
-<span class="badge-green">Office_001.pdf</span>
+    <span>Office Document.pdf</span>
+    <span class="badge-green">Office_001.pdf</span>
 </div>
 
 <div class="mock-row">
-<span>Office Image.jpg</span>
-<span class="badge-green">Office_002.jpg</span>
+    <span>Office Image.jpg</span>
+    <span class="badge-green">Office_002.jpg</span>
 </div>
 
 <div class="mock-row">
-<span>Office Report.docx</span>
-<span class="badge-green">Office_003.docx</span>
+    <span>Office Report.docx</span>
+    <span class="badge-green">Office_003.docx</span>
 </div>
 
 </div>
 
 </div>
+
 
 <div class="detail">
 
-<div class="detail-label">FLEXIBLE OPTIONS</div>
+<div class="detail-label">
+    FLEXIBLE OPTIONS
+</div>
 
-<h3>Build your naming pattern</h3>
+<h3>
+    Build your naming pattern
+</h3>
 
 <p>
-Combine multiple operations to create the exact filename structure you need.
+    Combine multiple operations to create the exact filename
+    structure you need.
 </p>
 
 <div class="mock">
 
 <div class="mock-head">
-Rename Options
+    Rename Options
 </div>
 
 <div class="mock-row">
-<span>Find text</span>
-<span>Office</span>
+    <span>Find text</span>
+    <span>Office</span>
 </div>
 
 <div class="mock-row">
-<span>Replace with</span>
-<span>Project</span>
+    <span>Replace with</span>
+    <span>Project</span>
 </div>
 
 <div class="mock-row">
-<span>Prefix</span>
-<span>2026_</span>
+    <span>Prefix</span>
+    <span>2026_</span>
 </div>
 
 <div class="mock-row">
-<span>Numbering</span>
-<span>001, 002, 003...</span>
+    <span>Numbering</span>
+    <span>001, 002, 003...</span>
 </div>
 
 </div>
@@ -1190,18 +1401,26 @@ Rename Options
 
 </section>
 
-<!-- DUPLICATE DETAIL -->
+
+<!-- =========================================================
+     DUPLICATE DETAIL
+========================================================= -->
 
 <section id="duplicates">
 
 <div class="head">
 
-<div class="eyebrow">TOOL 02</div>
+<div class="eyebrow">
+    TOOL 02
+</div>
 
-<h2>Find duplicate files and reclaim space.</h2>
+<h2>
+    Find duplicate files and reclaim space.
+</h2>
 
 <p>
-Smart File Manager scans your folders to identify files that may contain duplicate content.
+    Smart File Manager scans your folders to identify files
+    that may contain duplicate content.
 </p>
 
 </div>
@@ -1210,68 +1429,79 @@ Smart File Manager scans your folders to identify files that may contain duplica
 
 <div class="detail">
 
-<div class="detail-label">DUPLICATE FINDER</div>
+<div class="detail-label">
+    DUPLICATE FINDER
+</div>
 
-<h3>See duplicate groups clearly</h3>
+<h3>
+    See duplicate groups clearly
+</h3>
 
 <p>
-Instead of searching manually, Smart File Manager groups potential duplicates so you can review them together.
+    Instead of searching manually, Smart File Manager groups
+    potential duplicates so you can review them together.
 </p>
 
 <div class="mock">
 
 <div class="mock-head">
-Duplicate Groups
+    Duplicate Groups
 </div>
 
 <div class="mock-row">
-<span>vacation.jpg</span>
-<span>4.2 MB</span>
+    <span>vacation.jpg</span>
+    <span>4.2 MB</span>
 </div>
 
 <div class="mock-row">
-<span>vacation_copy.jpg</span>
-<span>4.2 MB</span>
+    <span>vacation_copy.jpg</span>
+    <span>4.2 MB</span>
 </div>
 
 <div class="mock-row">
-<span>vacation_final.jpg</span>
-<span>4.2 MB</span>
+    <span>vacation_final.jpg</span>
+    <span>4.2 MB</span>
 </div>
 
 </div>
 
 </div>
+
 
 <div class="detail">
 
-<div class="detail-label">SAFE CLEANUP</div>
+<div class="detail-label">
+    SAFE CLEANUP
+</div>
 
-<h3>Review before deleting</h3>
+<h3>
+    Review before deleting
+</h3>
 
 <p>
-You remain in control. Review duplicate groups and decide which files should be removed.
+    You remain in control. Review duplicate groups and decide
+    which files should be removed.
 </p>
 
 <div class="mock">
 
 <div class="mock-head">
-Storage Analysis
+    Storage Analysis
 </div>
 
 <div class="mock-row">
-<span>Files scanned</span>
-<span>12,480</span>
+    <span>Files scanned</span>
+    <span>12,480</span>
 </div>
 
 <div class="mock-row">
-<span>Duplicate groups</span>
-<span class="badge-red">326</span>
+    <span>Duplicate groups</span>
+    <span class="badge-red">326</span>
 </div>
 
 <div class="mock-row">
-<span>Potential space</span>
-<span class="badge-green">8.4 GB</span>
+    <span>Potential space</span>
+    <span class="badge-green">8.4 GB</span>
 </div>
 
 </div>
@@ -1282,18 +1512,26 @@ Storage Analysis
 
 </section>
 
-<!-- ORGANIZE DETAIL -->
+
+<!-- =========================================================
+     ORGANIZE DETAIL
+========================================================= -->
 
 <section id="organize">
 
 <div class="head">
 
-<div class="eyebrow">TOOL 03</div>
+<div class="eyebrow">
+    TOOL 03
+</div>
 
-<h2>Turn messy folders into organized data.</h2>
+<h2>
+    Turn messy folders into organized data.
+</h2>
 
 <p>
-Smart File Manager analyzes your files and suggests meaningful categories and destination folders.
+    Smart File Manager analyzes your files and suggests meaningful
+    categories and destination folders.
 </p>
 
 </div>
@@ -1302,78 +1540,89 @@ Smart File Manager analyzes your files and suggests meaningful categories and de
 
 <div class="detail">
 
-<div class="detail-label">SMART ORGANIZE</div>
+<div class="detail-label">
+    SMART ORGANIZE
+</div>
 
-<h3>Automatic categorization</h3>
+<h3>
+    Automatic categorization
+</h3>
 
 <p>
-Sort files into categories such as Pictures, Documents, Videos, Music, Archives and Applications.
+    Sort files into categories such as Pictures, Documents,
+    Videos, Music, Archives and Applications.
 </p>
 
 <div class="mock">
 
 <div class="mock-head">
-Detected Categories
+    Detected Categories
 </div>
 
 <div class="mock-row">
-<span>📷 Pictures</span>
-<span>1,284 files</span>
+    <span>📷 Pictures</span>
+    <span>1,284 files</span>
 </div>
 
 <div class="mock-row">
-<span>📄 Documents</span>
-<span>642 files</span>
+    <span>📄 Documents</span>
+    <span>642 files</span>
 </div>
 
 <div class="mock-row">
-<span>🎬 Videos</span>
-<span>205 files</span>
+    <span>🎬 Videos</span>
+    <span>205 files</span>
 </div>
 
 <div class="mock-row">
-<span>📦 Archives</span>
-<span>96 files</span>
+    <span>📦 Archives</span>
+    <span>96 files</span>
 </div>
 
 </div>
 
 </div>
+
 
 <div class="detail">
 
-<div class="detail-label">YOUR DESTINATIONS</div>
+<div class="detail-label">
+    YOUR DESTINATIONS
+</div>
 
-<h3>Choose where files go</h3>
+<h3>
+    Choose where files go
+</h3>
 
 <p>
-Map categories to your preferred folders and review the proposed moves before applying them.
+    Map categories to your preferred folders and review the
+    proposed moves before applying them.
 </p>
 
 <div class="mock">
 
 <div class="mock-head">
-Destination Preview
+    Destination Preview
 </div>
 
 <div class="mock-row">
-<span>Pictures</span>
-<span>My Files/Pictures</span>
+    <span>Pictures</span>
+    <span>My Files/Pictures</span>
 </div>
 
 <div class="mock-row">
-<span>Documents</span>
-<span>My Files/Documents</span>
+    <span>Documents</span>
+    <span>My Files/Documents</span>
 </div>
 
 <div class="mock-row">
-<span>Videos</span>
-<span>My Files/Videos</span>
+    <span>Videos</span>
+    <span>My Files/Videos</span>
 </div>
 
 <div class="mock-row">
-<span>Music</span>
-<span>My Files/Music</span>
+    <span>Music</span>
+    <span>My Files/Music</span>
 </div>
 
 </div>
@@ -1384,18 +1633,26 @@ Destination Preview
 
 </section>
 
-<!-- FEATURES -->
+
+<!-- =========================================================
+     FEATURES
+========================================================= -->
 
 <section id="features">
 
 <div class="head">
 
-<div class="eyebrow">WHY Smart File Manager</div>
+<div class="eyebrow">
+    WHY SMART FILE MANAGER
+</div>
 
-<h2>One application for everyday file management.</h2>
+<h2>
+    One application for everyday file management.
+</h2>
 
 <p>
-Designed around the three tasks that take the most repetitive work out of managing large folders.
+    Designed around the three tasks that take the most repetitive
+    work out of managing large folders.
 </p>
 
 </div>
@@ -1406,7 +1663,7 @@ Designed around the three tasks that take the most repetitive work out of managi
 <div class="icon">⚡</div>
 <h3>Fast Scanning</h3>
 <p>
-Efficiently scan everyday folders and large file collections.
+    Efficiently scan everyday folders and large file collections.
 </p>
 </div>
 
@@ -1414,7 +1671,8 @@ Efficiently scan everyday folders and large file collections.
 <div class="icon">👀</div>
 <h3>Preview First</h3>
 <p>
-Review rename operations, duplicate groups and organization changes before applying them.
+    Review rename operations, duplicate groups and organization
+    changes before applying them.
 </p>
 </div>
 
@@ -1422,7 +1680,7 @@ Review rename operations, duplicate groups and organization changes before apply
 <div class="icon">📊</div>
 <h3>Progress Tracking</h3>
 <p>
-Monitor files processed, storage usage and operation progress.
+    Monitor files processed, storage usage and operation progress.
 </p>
 </div>
 
@@ -1430,7 +1688,7 @@ Monitor files processed, storage usage and operation progress.
 <div class="icon">🎯</div>
 <h3>Precise Controls</h3>
 <p>
-Control naming rules, destinations and cleanup operations.
+    Control naming rules, destinations and cleanup operations.
 </p>
 </div>
 
@@ -1438,7 +1696,7 @@ Control naming rules, destinations and cleanup operations.
 <div class="icon">📁</div>
 <h3>Large Folder Support</h3>
 <p>
-Built for both small folders and large collections of files.
+    Built for both small folders and large collections of files.
 </p>
 </div>
 
@@ -1446,7 +1704,8 @@ Built for both small folders and large collections of files.
 <div class="icon">🛡️</div>
 <h3>User Controlled</h3>
 <p>
-Smart File Manager shows what will happen before you apply important file operations.
+    Smart File Manager shows what will happen before you apply
+    important file operations.
 </p>
 </div>
 
@@ -1454,15 +1713,22 @@ Smart File Manager shows what will happen before you apply important file operat
 
 </section>
 
-<!-- CATEGORIES -->
+
+<!-- =========================================================
+     CATEGORIES
+========================================================= -->
 
 <section>
 
 <div class="head">
 
-<div class="eyebrow">SMART ORGANIZE CATEGORIES</div>
+<div class="eyebrow">
+    SMART ORGANIZE CATEGORIES
+</div>
 
-<h2>Organize your files by what they are.</h2>
+<h2>
+    Organize your files by what they are.
+</h2>
 
 </div>
 
@@ -1502,18 +1768,26 @@ Applications
 
 </section>
 
-<!-- BEFORE AFTER -->
+
+<!-- =========================================================
+     BEFORE AFTER
+========================================================= -->
 
 <section>
 
 <div class="head">
 
-<div class="eyebrow">BEFORE & AFTER</div>
+<div class="eyebrow">
+    BEFORE & AFTER
+</div>
 
-<h2>One messy folder. Three ways to fix it.</h2>
+<h2>
+    One messy folder. Three ways to fix it.
+</h2>
 
 <p>
-Rename files, remove duplicates and organize everything into a cleaner structure.
+    Rename files, remove duplicates and organize everything
+    into a cleaner structure.
 </p>
 
 </div>
@@ -1527,33 +1801,34 @@ Rename files, remove duplicates and organize everything into a cleaner structure
 <div class="mock">
 
 <div class="mock-row">
-<span>IMG_4829.jpg</span>
-<span>4 MB</span>
+    <span>IMG_4829.jpg</span>
+    <span>4 MB</span>
 </div>
 
 <div class="mock-row">
-<span>IMG_4829_copy.jpg</span>
-<span>4 MB</span>
+    <span>IMG_4829_copy.jpg</span>
+    <span>4 MB</span>
 </div>
 
 <div class="mock-row">
-<span>invoice-final2.pdf</span>
-<span>820 KB</span>
+    <span>invoice-final2.pdf</span>
+    <span>820 KB</span>
 </div>
 
 <div class="mock-row">
-<span>song-new-final.mp3</span>
-<span>6 MB</span>
+    <span>song-new-final.mp3</span>
+    <span>6 MB</span>
 </div>
 
 <div class="mock-row">
-<span>backup.zip</span>
-<span>1.2 GB</span>
+    <span>backup.zip</span>
+    <span>1.2 GB</span>
 </div>
 
 </div>
 
 </div>
+
 
 <div class="detail">
 
@@ -1562,28 +1837,28 @@ Rename files, remove duplicates and organize everything into a cleaner structure
 <div class="mock">
 
 <div class="mock-row">
-<span>📁 Pictures</span>
-<span>Organized</span>
+    <span>📁 Pictures</span>
+    <span>Organized</span>
 </div>
 
 <div class="mock-row">
-<span>📁 Documents</span>
-<span>Organized</span>
+    <span>📁 Documents</span>
+    <span>Organized</span>
 </div>
 
 <div class="mock-row">
-<span>📁 Music</span>
-<span>Organized</span>
+    <span>📁 Music</span>
+    <span>Organized</span>
 </div>
 
 <div class="mock-row">
-<span>📁 Archives</span>
-<span>Organized</span>
+    <span>📁 Archives</span>
+    <span>Organized</span>
 </div>
 
 <div class="mock-row">
-<span>✓ Duplicates reviewed</span>
-<span class="badge-green">Cleaned</span>
+    <span>✓ Duplicates reviewed</span>
+    <span class="badge-green">Cleaned</span>
 </div>
 
 </div>
@@ -1594,15 +1869,22 @@ Rename files, remove duplicates and organize everything into a cleaner structure
 
 </section>
 
-<!-- PRICING -->
+
+<!-- =========================================================
+     PRICING
+========================================================= -->
 
 <section id="pricing">
 
 <div class="head">
 
-<div class="eyebrow">PRICING</div>
+<div class="eyebrow">
+    PRICING
+</div>
 
-<h2>Choose the way you want to manage your files.</h2>
+<h2>
+    Choose the way you want to manage your files.
+</h2>
 
 </div>
 
@@ -1625,10 +1907,11 @@ Rename files, remove duplicates and organize everything into a cleaner structure
 </ul>
 
 <a class="btn" href="#download">
-Get Started
+    Get Started
 </a>
 
 </div>
+
 
 <div class="card featured">
 
@@ -1647,10 +1930,11 @@ Get Started
 </ul>
 
 <a class="btn primary" href="#download">
-Get Pro
+    Get Pro
 </a>
 
 </div>
+
 
 <div class="card">
 
@@ -1668,8 +1952,8 @@ Get Pro
 <li>Deployment assistance</li>
 </ul>
 
-<a class="btn" href="mailto:hello@Smart File Manager.example">
-Contact Us
+<a class="btn" href="#contact-forum">
+    Contact Us
 </a>
 
 </div>
@@ -1678,15 +1962,22 @@ Contact Us
 
 </section>
 
-<!-- FAQ -->
+
+<!-- =========================================================
+     FAQ
+========================================================= -->
 
 <section id="faq">
 
 <div class="head">
 
-<div class="eyebrow">FAQ</div>
+<div class="eyebrow">
+    FAQ
+</div>
 
-<h2>Questions, answered.</h2>
+<h2>
+    Questions, answered.
+</h2>
 
 </div>
 
@@ -1695,77 +1986,92 @@ Contact Us
 <div class="q open" onclick="faq(this)">
 
 <h3>
-What are the three main Smart File Manager tools?
-<span>+</span>
+    What are the three main Smart File Manager tools?
+    <span>+</span>
 </h3>
 
 <p>
-Smart File Manager focuses on three core tools: Bulk Rename for changing many filenames at once, Duplicate Finder for identifying duplicate files, and Smart Organize for categorizing and moving files into destination folders.
+    Smart File Manager focuses on three core tools: Bulk Rename
+    for changing many filenames at once, Duplicate Finder for
+    identifying duplicate files, and Smart Organize for
+    categorizing and moving files into destination folders.
 </p>
 
 </div>
 
+
 <div class="q" onclick="faq(this)">
 
 <h3>
-Can I rename hundreds of files at once?
-<span>+</span>
+    Can I rename hundreds of files at once?
+    <span>+</span>
 </h3>
 
 <p>
-Yes. Bulk Rename is designed to apply find and replace, prefixes, suffixes and automatic numbering to multiple files.
+    Yes. Bulk Rename is designed to apply find and replace,
+    prefixes, suffixes and automatic numbering to multiple files.
 </p>
 
 </div>
 
+
 <div class="q" onclick="faq(this)">
 
 <h3>
-Does Duplicate Finder automatically delete files?
-<span>+</span>
+    Does Duplicate Finder automatically delete files?
+    <span>+</span>
 </h3>
 
 <p>
-The website presents Duplicate Finder as a review-based cleanup tool. Users can inspect duplicate groups before deciding what to remove.
+    The website presents Duplicate Finder as a review-based
+    cleanup tool. Users can inspect duplicate groups before
+    deciding what to remove.
 </p>
 
 </div>
 
+
 <div class="q" onclick="faq(this)">
 
 <h3>
-Can I choose destination folders?
-<span>+</span>
+    Can I choose destination folders?
+    <span>+</span>
 </h3>
 
 <p>
-Yes. Smart Organize can use destination folders based on your organization requirements.
+    Yes. Smart Organize can use destination folders based
+    on your organization requirements.
 </p>
 
 </div>
 
+
 <div class="q" onclick="faq(this)">
 
 <h3>
-Can Smart File Manager handle large folders?
-<span>+</span>
+    Can Smart File Manager handle large folders?
+    <span>+</span>
 </h3>
 
 <p>
-Smart File Manager is designed for both everyday folders and large collections of files.
+    Smart File Manager is designed for both everyday folders
+    and large collections of files.
 </p>
 
 </div>
 
+
 <div class="q" onclick="faq(this)">
 
 <h3>
-Is my data uploaded to the cloud?
-<span>+</span>
+    Is my data uploaded to the cloud?
+    <span>+</span>
 </h3>
 
 <p>
-Smart File Manager is a desktop application. The final product behavior should determine exactly how file data is processed; this website does not make a cloud-upload claim.
+    Smart File Manager is a desktop application. The final
+    product behavior should determine exactly how file data
+    is processed; this website does not make a cloud-upload claim.
 </p>
 
 </div>
@@ -1774,52 +2080,120 @@ Smart File Manager is a desktop application. The final product behavior should d
 
 </section>
 
-<!-- DOWNLOAD CTA -->
+
+<!-- =========================================================
+     DOWNLOAD CTA
+========================================================= -->
 
 <section id="download">
 
 <div class="wrap cta">
 
 <div class="eyebrow">
-READY TO TAKE CONTROL?
+    READY TO TAKE CONTROL?
 </div>
 
 <h2>
-Rename. Clean. Organize.
+    Rename. Clean. Organize.
 </h2>
 
 <p>
-Three powerful tools to turn messy folders into a cleaner, more manageable file system.
+    Three powerful tools to turn messy folders into a cleaner,
+    more manageable file system.
 </p>
 
 <a class="btn primary"
-href="#"
-onclick="alert('Connect this button to your Smart File Manager installer/download page.');return false">
-Download Smart File Manager → </a>
+   href="#"
+   onclick="alert('Connect this button to your Smart File Manager installer/download page.');return false">
+
+    Download Smart File Manager →
+
+</a>
 
 </div>
 
 </section>
 
-<!-- FOOTER -->
+
+<!-- =========================================================
+     CONTACT FORUM
+========================================================= -->
+
+<section id="contact-forum" class="contact-forum">
+
+<div class="wrap">
+
+<div class="forum-box">
+
+<div class="eyebrow">
+    CONTACT & SUPPORT
+</div>
+
+<h2>
+    Have a question or suggestion?
+</h2>
+
+<p>
+    Visit the Smart File Manager Contact Forum to ask questions,
+    share feedback, report issues or discuss new features.
+    The forum will be the central place for Smart File Manager users
+    to connect and get support.
+</p>
+
+<div class="forum-actions">
+
+<a class="forum-button"
+   href="#"
+   onclick="openForum();return false;">
+    Visit Contact Forum →
+</a>
+
+<a class="btn"
+   href="#download">
+    Download Smart File Manager
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
 
 <footer>
 
 <div class="wrap foot">
 
 <div>
-© 2026 Smart File Manager. All rights reserved.
+    © 2026 Smart File Manager. All rights reserved.
 </div>
 
 <div class="footlinks">
+
 <a href="#">Privacy</a>
+
 <a href="#">Terms</a>
-<a href="mailto:hello@Smart File Manager.example">Contact</a>
+
+<a href="#contact-forum">
+    Contact Forum
+</a>
+
 </div>
 
 </div>
 
 </footer>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
 
 <script>
 
@@ -1855,7 +2229,17 @@ function faq(e){
 
 }
 
+
+function openForum(){
+
+    alert(
+        'The Contact Forum will be connected here. Replace this function with your forum URL when it is ready.'
+    );
+
+}
+
 </script>
 
 </body>
 </html>
+```
